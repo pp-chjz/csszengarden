@@ -1,0 +1,180 @@
+header {
+  text-align: center;
+  color: #517edf;
+  text-shadow: 2px 2px 5px #f04d68;
+  font-size: 170%;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png"), url("	https://assets.stickpng.com/images/5847f5bdcef1014c0b5e489c.png");
+  background-size: 80px, 130px;
+  background-repeat: no-repeat;
+  background-position-x: 190px, 950px;
+  background-position-y: 0px, -9px;
+}
+
+.preamble {
+  margin: 20px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-right: 50px;
+  padding-left: 50px;
+  background-color: #c5e6f1;
+  border-left: 7px solid #4580ff;
+  border-right: 7px solid #4580ff;
+  border-radius: 25px;
+}
+.preamble h3 {
+  font-size: 140%;
+}
+
+.explanation {
+  margin: 20px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-right: 50px;
+  padding-left: 50px;
+  background-color: #cfeecf;
+  border-left: 7px solid #2ed452;
+  border-right: 7px solid #2ed452;
+  border-radius: 25px;
+}
+.explanation h3 {
+  font-size: 140%;
+}
+
+.participation {
+  margin: 20px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-right: 50px;
+  padding-left: 50px;
+  background-color: lightyellow;
+  border-left: 7px solid #fffb00;
+  border-right: 7px solid #fffb00;
+  border-radius: 25px;
+}
+.participation h3 {
+  font-size: 140%;
+}
+
+.benefits {
+  margin: 20px;
+  margin-left: 30%;
+  margin-right: 30%;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-right: 50px;
+  padding-left: 50px;
+  background-color: #ebcfc5;
+  border-left: 7px solid #ff9317;
+  border-right: 7px solid #ff9317;
+  border-radius: 25px;
+}
+.benefits h3 {
+  font-size: 140%;
+}
+
+.requirements {
+  margin: 20px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-right: 50px;
+  padding-left: 50px;
+  background-color: #f7d6db;
+  border-left: 7px solid #fa3939;
+  border-right: 7px solid #fa3939;
+  border-radius: 25px;
+}
+.requirements h3 {
+  font-size: 140%;
+}
+
+footer {
+  text-align: center;
+}
+
+.summary {
+  text-align: center;
+  height: 100px;
+  width: 80%;
+  margin: 0 auto;
+  border-bottom: 2px solid black;
+}
+
+p {
+  font-size: 130%;
+}
+
+body {
+  font-family: lato, sans-serif;
+  background-image: url("https://image.freepik.com/free-vector/white-abstract-background_23-2148810113.jpg");
+}
+
+a {
+  font-size: 70%;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  position: relative;
+  display: inline-block;
+  color: #e9546c;
+  border-bottom: 2px solid #e9546c;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+a:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 2px;
+  background: #e9546c;
+  transform: translateY(100%);
+  transition: transform 0.2s ease-in-out;
+  transition-delay: 0.6s;
+}
+a > span {
+  position: relative;
+  display: block;
+  padding: 0.1em;
+  color: inherit;
+}
+a > span:before, a > span:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #e9546c;
+  transition: transform 0.2s ease-in-out;
+}
+a > span:before {
+  height: 2px;
+  width: 100%;
+  transform: translateX(100%);
+  transition-delay: 0.4s;
+}
+a > span:after {
+  height: 100%;
+  width: 2px;
+  transform: translateY(-100%);
+  transition-delay: 0.2s;
+}
+a:hover:after, a:hover > span:before, a:hover > span:after {
+  transform: translate(0, 0);
+}
+a:hover:after {
+  transition-delay: 0s;
+}
+a:hover > span:before {
+  transition-delay: 0.2s;
+}
+a:hover > span:after {
+  transition-delay: 0.4s;
+}
+a:hover {
+  color: #e4e4e2;
+  background-color: #e9546c;
+  transition-delay: 0.6s;
+}
+
+/*# sourceMappingURL=style.css.map */

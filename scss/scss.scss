@@ -1,0 +1,220 @@
+$btn-color: rgb(233, 84, 108);
+$btn-color-hover: #e4e4e2;
+$header-color: rgb(81, 126, 223);
+$header-color-shadow: rgb(240, 77, 104);
+$summary-border-color: rgb(0, 0, 0);
+$header-size: 170%;
+$html-logo-size: 130px;
+$css-logo-size: 80px;
+$p-font-size: 130%;
+
+
+header{
+    text-align: center;
+    color: $header-color;
+    text-shadow: 2px 2px 5px $header-color-shadow;
+    font-size: $header-size;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png") , url("	https://assets.stickpng.com/images/5847f5bdcef1014c0b5e489c.png");
+    background-size: $css-logo-size ,$html-logo-size;
+    background-repeat: no-repeat;
+    background-position-x: 190px,950px;
+    background-position-y: 0px,-9px;
+
+}
+
+@mixin background($color , $border-color , $main-info) {
+
+    h3{
+        font-size: 140%;
+    }
+    // margin: 20px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-right: 50px;
+    padding-left: 50px;
+
+    @if $main-info {
+        background-color: $color;
+        border-left: 7px solid $border-color;
+        border-radius: 25px;
+    }
+    @else{
+        background-color:$color;
+        border-left: 7px solid $border-color;
+        border-right: 7px solid $border-color;
+        border-radius: 25px;
+    }
+}
+
+.preamble{
+    // background-color: rgb(197, 230, 241);
+    // border-right: 7px solid rgb(69, 128, 255);
+     
+    margin: 20px;
+
+    @include background(rgb(197, 230, 241),rgb(69, 128, 255)  , false);
+    
+}
+
+.explanation{
+    // background-color: rgb(186, 229, 186);
+    // border-left: 7px solid rgb(46, 212, 82);
+    margin: 20px;
+    @include background(rgb(207, 238, 207), rgb(46, 212, 82) , false);
+}
+
+.participation{
+    // background-color: lightyellow;
+    // border-left: 7px solid rgb(255, 251, 0);
+    // border-right: 7px solid rgb(255, 251, 0);
+    margin: 20px;
+    @include background(lightyellow, rgb(255, 251, 0) , false)
+}
+
+.benefits{
+    // background-color: rgb(223, 186, 172);
+    // border-left: 7px solid rgb(255, 147, 23);
+    margin: 20px;
+    margin-left: 30%;
+    margin-right: 30%;
+    @include background(rgb(235, 207, 197), rgb(255, 147, 23) , false)
+}
+
+.requirements{
+    // background-color: rgb(245, 202, 209);
+    // border-left: 7px solid rgb(250, 57, 57);
+    // border-right: 7px solid rgb(250, 57, 57);
+    margin: 20px;
+    @include background( rgb(247, 214, 219),  rgb(250, 57, 57) , false)
+}
+
+footer{
+    text-align: center;
+}
+
+.summary{
+    
+      
+    
+    text-align: center;
+    height: 100px;
+    width: 80%;
+    margin: 0 auto;
+    border-bottom: 2px solid $summary-border-color;
+
+}
+
+p{
+    font-size: $p-font-size;
+}
+
+body{
+    font-family: lato, sans-serif;
+    background-image: url("https://image.freepik.com/free-vector/white-abstract-background_23-2148810113.jpg");
+    
+}
+
+
+
+
+
+@mixin btn-draw($color, $color-hov, $width: 1px, $padding: 0.1em, $time: 0.2s) {
+    position: relative;
+  
+    display: inline-block;
+  
+    color: $color;
+    border-bottom: $width solid $color;
+    cursor: pointer;
+    overflow: hidden;
+    transition: color $time ease-in-out, background-color $time ease-in-out;
+  
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+  
+      height: 100%;
+      width: $width;
+  
+      background: $color;
+      transform: translateY(100%);
+      transition: transform $time ease-in-out;
+      transition-delay: $time * 3;
+    }
+  
+    > span {
+      position: relative;
+  
+      display: block;
+      padding: $padding;
+  
+      color: inherit;
+  
+      &:before, 
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+  
+        background: $color;
+        transition: transform $time ease-in-out;
+      }
+  
+      &:before {
+        height: $width;
+        width: 100%;
+        
+        transform: translateX(100%);
+        transition-delay: $time * 2;
+      }
+  
+      &:after {
+        height: 100%;
+        width: $width;
+  
+        transform: translateY(-100%);
+        transition-delay: $time;
+      }
+    }
+  
+    &:hover:after, 
+    &:hover > span:before, 
+    &:hover > span:after {
+      transform: translate(0, 0);
+    }
+  
+    &:hover:after {
+      transition-delay: 0s;
+    }
+  
+    &:hover > span:before {
+      transition-delay: $time;
+    }
+  
+    &:hover > span:after {
+      transition-delay: $time * 2;
+    }
+  
+    &:hover {
+      color: $color-hov;
+      background-color: $color;
+      transition-delay: $time * 3;
+    }
+  }
+
+
+
+
+a {
+  font-size: 70%;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  @include btn-draw($btn-color, $btn-color-hover, 2px);
+}
+
+
+
